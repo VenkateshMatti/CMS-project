@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact Us - ScholarSync</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+ <div th:fragment="contactSectionFragment"> 
+<section class="contact-section">
+    <h2>GET IN TOUCH</h2>
+    <div class="contact-container">
+
+        <!-- Left Contact Info -->
+        <div class="contact-info">
+            <h3>CONTACT INFO</h3>
+            <p><i class="fas fa-envelope"></i> <strong>EMAIL</strong> support@scholarsync.in</p>
+            <p><i class="fas fa-phone"></i> <strong>PHONE</strong> +91 2564567891</p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>ADDRESS</strong> ScholarSync HQ, Vizag, India</p>
+        </div>
+
+        <!-- Right Contact Form -->
+        <div class="contact-form">
+            <form th:action="@{/contact}" th:object="${contact}" method="post">
+                <input type="text" th:field="*{name}" placeholder="Your Name" required>
+                <input type="email" th:field="*{email}" placeholder="Email Address" required>
+                <input type="text" th:field="*{phone}" placeholder="Phone Number" required>
+                <textarea th:field="*{message}" placeholder="Message" required></textarea>
+                <button type="submit">SEND MESSAGE</button>
+            </form>
+            <div th:if="${success}" style="color: green; margin-top: 10px;" th:text="${success}"></div>
+        </div>
+
+    </div>
+</section>
+</div>
+ 
+</body>
+</html>
+ 

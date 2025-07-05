@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.navbar {
+    font-size: 1.1rem;
+}
+.navbar-brand {
+    font-weight: bold;
+}
+.nav-link {
+    margin-left: 15px;
+}

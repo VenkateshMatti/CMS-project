@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="sidebar">
+    <aside class="sidebar">
+         
+        <ul class="nav-list">
+    <li class="active">
+        <a th:href="@{/home}" class="nav-link">
+            <i class="fas fa-home"></i> Dashboard
+        </a>
+    </li>
+    <li>
+        <a th:href="@{/announcements}">
+            <i class="fas fa-bullhorn"></i> Announcements
+             <span th:if="${unreadMessages > 0}" class="badge" th:text="${unreadMessages}"></span>
+        </a>
+    </li>
+    <li>
+        <a th:href="@{/my-courses}">
+            <i class="fas fa-book"></i> My Courses
+             
+          </a>
+ </li>
+     
+    <li>
+        <a th:href="@{/calendar}">
+            <i class="fas fa-calendar-alt"></i> Calendar
+        </a>
+    </li>
+    <li>
+        <a th:href="@{/exams}">
+            <i class="fas fa-pencil-alt"></i> Exams
+        </a>
+    </li>
+    <li>
+        <a th:href="@{/certificates}">
+            <i class="fas fa-certificate"></i> Certificates
+        </a>
+    </li>
+    <li>
+        <a th:href="@{/purchases}">
+            <i class="fas fa-shopping-cart"></i> My Purchases
+        </a>
+    </li>
+    <li>
+        <a th:href="@{/profile}">
+            <i class="fas fa-user"></i> Profile
+             <span th:if="${profileNotifications > 0}" class="badge" th:text="${profileNotifications}"></span> 
+        </a>
+    </li>
+    <li>
+        <a th:href="@{/settings}">
+            <i class="fas fa-cog"></i> Settings
+        </a>
+    </li>
+</ul>
+        
+    </aside>
+     
+</div>
+</html>
+ 

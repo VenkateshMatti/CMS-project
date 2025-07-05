@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Courses - SCHOLAR SYNC</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/mycourses.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside th:replace="fragments/sidebar :: sidebar"></aside>
+     
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header th:replace="fragments/topbar :: topbar"></header>
+
+        <section class="profile-completion">
+            <span>  </span>
+            <button class="btn btn-primary">Complete My Profile</button>
+        </section>
+
+        <section class="learning-section">
+            <div class="learning-left">
+                 <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h4>Continue <span class="blue">Learning</span></h4>
+                     
+                </div>
+                 <div class="course-grid">
+                 <div class="course-card" th:each="course : ${courseList}">
+                  <a th:href="@{'/my-courses/' + ${course.id}}">    
+                  
+                 <img src="/images/course1.jpg" alt="Course Thumbnail">
+                 <h5 th:text="${course.title}">Course Title</h5>
+                 <p><i class="far fa-calendar-alt"></i> <span th:text="${course.dateRange}">Date Range</span></p>
+                 <div class="progress-line">
+                <div th:style="'width:' + ${course.progress} + '%'"></div>
+            </div>
+            <small th:text="${course.progress + '%'}">0%</small>
+              </a>
+         </div>
+    </div>
+                 
+            </div>
+            <div class="learning-right">
+                <h4>Today's <span class="blue">Classes</span> <i class="fas fa-sync-alt"></i></h4>
+                <p>No Classes.</p>
+            </div>
+        </section>
+
+         <section class="class-updates">
+    <h4>Class <span class="blue">Updates</span></h4>
+    <div class="update-box" th:each="update : ${updates}">
+        <div><strong>SCHOLAR SYNC PRIVATE LIMITED</strong></div>
+        <div>Auto</div>
+        <p th:text="'Your new class for ' + update.title + ' scheduled on ' + update.description"></p>
+    </div>
+</section>
+         
+    </main>
+</div>
+
+ 
+
+<script>
+  function toggleUserDropdown() {
+    const dropdown = document.getElementById("userDropdown");
+    dropdown.classList.toggle("show");
+  }
+
+  // Close dropdown if clicked outside
+  window.onclick = function(event) {
+    const dropdown = document.getElementById("userDropdown");
+    if (!event.target.closest("#userDropdown")) {
+      dropdown.classList.remove("show");
+    }
+  }
+</script>
+
+<script>
+  function toggleCommentDropdown() {
+    const dropdown = document.getElementById("commentDropdown");
+    dropdown.classList.toggle("show");
+  }
+
+  // Close dropdown when clicking outside
+  window.onclick = function (e) {
+    const dropdown = document.getElementById("commentDropdown");
+    if (!e.target.closest("#commentDropdown")) {
+      dropdown.classList.remove("show");
+    }
+  }
+</script>
+</body>
+</html>
+ 

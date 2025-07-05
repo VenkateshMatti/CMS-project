@@ -1,0 +1,63 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Course Videos</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/mycourses.css}">
+</head>
+<body>
+<div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside th:replace="fragments/sidebar :: sidebar"></aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Topbar -->
+        <header th:replace="fragments/topbar :: topbar"></header>
+
+        <div class="container mt-4">
+            <h3 th:text="'Class Videos for: ' + ${course.title}"></h3>
+
+            <!-- No Videos Message -->
+            <div th:if="${#lists.isEmpty(videos)}">
+                <p>No videos available for this course.</p>
+            </div>
+
+            <!-- Video Player List -->
+            <div th:if="${!#lists.isEmpty(videos)}" class="row">
+                <div th:each="video : ${videos}" class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${video.title}"></h5>
+
+                            <!-- YouTube Video Embed -->
+                            <div th:if="${video.path.contains('youtube.com') or video.path.contains('youtu.be')}">
+                                <div class="ratio ratio-16x9">
+                                    <iframe th:src="'https://www.youtube.com/embed/' + ${#strings.substringAfter(video.path, 'v=')}"
+                                            title="YouTube video"
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+
+                            <!-- Local Video File -->
+                            <div th:unless="${video.path.contains('youtube.com') or video.path.contains('youtu.be')}">
+                                <video class="w-100" controls th:src="@{${video.path}}">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+
+                            
+                            <a class="btn btn-sm btn-outline-primary mt-2" th:href="@{${video.path}}" download>
+                                Download Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
+ 

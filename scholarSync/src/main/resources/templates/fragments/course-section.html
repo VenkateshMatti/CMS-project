@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Courses</title>
+    <link rel="stylesheet" th:href="@{/css/courses.css}">
+</head>
+<body>
+<div th:fragment="courseSectionFragment">
+<section class="course-section">
+    <h2>Available Courses</h2>
+     <a href="/admin/create-course" class="create-course-btn">+ Create New Course</a>
+    <div class="courses-container">
+        <div class="course-card" th:each="course : ${courses}">
+            <img th:src="@{'/images/' + ${course.imagePath}}" alt="Course Image" />
+            <h3 th:text="${course.title}"></h3>
+            <p>
+                <span class="original-price" th:text="'₹' + ${course.originalPrice}"></span>
+                <span class="discounted-price" th:text="'₹' + ${course.discountedPrice}"></span>
+            </p>
+            <p><i class="fa fa-laptop"></i> <span th:text="${course.type}"></span></p>
+        </div>
+    </div>
+</section>
+</div>
+</body>
+</html>

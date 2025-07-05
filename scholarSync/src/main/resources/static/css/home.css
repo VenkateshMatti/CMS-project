@@ -1,0 +1,637 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #0a0f2c, #041034);
+    color: white;
+     
+}
+ /* 📞 Top Contact Bar */
+ .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    background-color: #111;
+    color: white;
+    padding: 5px 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+ .top-bar i {
+  color: white !important;
+  margin-right: 8px;
+}
+ 
+.top-bar .contact-info span {
+    margin-right: 20px;
+    
+}
+
+.top-bar .social-icons a {
+    color: white;
+    margin-left: 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.top-bar .social-icons a:hover {
+    color: #ffd700; /* gold hover color */
+}
+
+
+ 
+
+/* 🔍 Navigation Menu */
+.nav-bar {
+    background: #fff;
+    color: black;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-bar .menu a {
+    margin: 0 15px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}.nav-bar {
+    position: fixed;
+    top: 30px; /* height of top-bar */
+    left: 0;
+    width: 96%;
+    background-color: white;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-bar .menu a:hover {
+    color: #007bff;
+}
+ 
+ .account-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.account-dropdown {
+  position: relative;
+}
+
+.account-btn {
+  padding: 10px 16px;
+  font-weight: bold;
+  background-color:  #00008B ;
+  color: white;
+  border: 2px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.account-btn i {
+  margin-left: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 98%; /* dropdown below the button */
+  right: 0;
+  background-color: #2a2a2a;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 999;
+  border-radius: 4px;
+}
+
+.dropdown-content a,
+.dropdown-content form button {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  background: none;
+  border: none;
+  width: 97%;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dropdown-content a:hover,
+.dropdown-content form button:hover {
+  background-color: #444;
+}
+
+.account-dropdown:hover .dropdown-content {
+  display: block;
+}
+ 
+
+.responsive-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow-y:  auto;
+  position: relative;
+    margin-top: 130px; /* total height of top and nav bars */
+    overflow-x: hidden;
+}
+.home-section {
+	position: relative;
+	   width: 100%;
+	  overflow-y: auto;
+    padding: 20px;
+	      min-height: 100vh;
+  background-image: url('/images/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Or whatever height you want */
+}                                  /* 📌 Main Section Layout */
+.main-content {
+	
+	 
+      display: flex;
+    justify-content: right;
+    align-items: right; 
+    height: 80vh;
+    padding: 30px;
+    position: relative;
+}
+.icon-column {
+  position: relative;
+  width: 65%;
+  height: 80%;
+}
+ 
+/* 📎 Left Vertical Icons */
+.icon-column img {
+    display: flex;
+    margin: 30px 0;
+    width: 90px;
+     
+    border-radius: 50%;
+    padding: 10px;
+    
+    transition: transform 0.3s;
+}
+.icon-circle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  
+  display: flex;
+  align-items: right;
+  justify-content: right;
+}
+
+  .icon-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+   
+}
+  #java {
+  position:absolute;
+  top: 0.5%;
+  right: 52%;
+}
+
+#analytics {
+  top: 52%;
+  left: 30.5%;
+}
+
+#python {
+  top: 99.7%;
+  left: 37%;
+}
+  
+.icon-column img:hover {
+    transform: scale(1.1);
+}
+  
+ .logo-circle .circle {
+  position: absolute;
+  top: 56.2%;
+  left: 87.3%;
+  transform: translate(-50%, -50%); /* ✅ Perfect centering */
+  
+  width: 260px;
+  height: 260px;
+  border-radius: 54%;
+  /*border: 6px solid #ffffff; */
+  overflow: hidden;
+  /*background: radial-gradient(circle at center, #021b3c, #051c3f);
+ */ display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: glow 5s infinite ease-in-out;
+  z-index: 1; /* Optional: ensure it's on top */
+}
+
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔵 Glowing Circular Logo */
+.logo-circle .circle {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    /*border: 6px solid #ffffff ; */
+     
+    overflow: hidden;          /* Hide overflow content */
+  display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #021b3c, #051c3f);
+    animation: glow 5s infinite ease-in-out;
+    text-align: center;
+}
+
+.logo-circle img {
+    width: 320px;
+    height: 100%;
+  object-fit: cover; 
+  display: block;  
+    margin-bottom: 10px;
+}
+
+ /*@keyframes glow {
+    0%, 100% { box-shadow: 0 0 10px #ffffff  ; }
+    50% { box-shadow: 0 0 40px  #ffffff; }
+}*/
+
+
+.team-banner {
+  background: linear-gradient(to right, #1a1a40, #1a2a6c);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.team-banner h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.team-banner p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.team-card {
+  background-color: #ffffff11;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  transition: transform 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+}
+
+ .team-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid #ffffffaa;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.team-card h3 {
+  margin: 10px 0 4px;
+  font-size: 18px;
+}
+
+.team-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+
+
+ .course-section {
+    padding: 60px 20px;
+   background: white;
+  color: #000;
+    text-align: center;
+    position: relative;
+  z-index: 1;
+}
+
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.course-card {
+      background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 260px;
+    padding: 15px;
+    transition: transform 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 8px;
+}
+
+.discounted-price {
+    color: #0078d4;
+    font-weight: bold;
+}
+ 
+
+.contact-section {
+    background-color: #ffffff;
+    color: #000;
+    padding: 60px 40px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.contact-section .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* ========== Left: Contact Info ========== */
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.contact-info p {
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.contact-info strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.contact-info i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #000;
+}
+
+/* ========== Right: Contact Form ========== */
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+}
+
+.contact-form form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-form form button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.contact-form form button:hover {
+    background-color: #002244;
+}
+
+ 
+.about-section {
+    padding: 60px 20px;
+    background: white;
+    color: #000;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+.main-footer {
+    background: #f7f7f7;
+    color: #222;
+    padding: 50px 30px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    border-top: 1px solid #ccc;
+}
+.Scholar-Sync{
+  width: 120px;
+  height: 120px;
+  background :clear;
+  border-radius: 50%;
+  object-fit: cover;
+ 
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-logo img {
+    width: 160px;
+    margin-bottom: 15px;
+}
+
+.app-buttons img {
+    width: 140px;
+    margin-right: 10px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #0078d4;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.social-icons a {
+    font-size: 18px;
+    color: #333;
+    margin-right: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0078d4;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.top-button {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid #999;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    transition: background 0.3s;
+}
+
+ 
+
+.top-button:hover {
+    background: #ddd;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url("/images/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.account-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 1;
+    min-width: 120px;
+}
+.account-dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    display: block;
+    text-decoration: none;
+}
+
